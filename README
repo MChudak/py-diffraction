@@ -1,6 +1,6 @@
 py-diffraction readme
 
-copyleft: Maciej Chudak, july 2011
+copyleft: Maciej Chudak, July 2011
            [don't try to read my name correctly,
             it's in an unspeakable language of Slavs]
 
@@ -44,7 +44,7 @@ Maybe. I don't guarantee that my method is ok, I didn't compare
 it to any book or experiment data YET, so use my code with
 the possibility in mind, that it might give wrong results.
 
-I briefly did some far-screen simulations and it prosuced a nice
+I briefly did some far-screen simulations and it produced a nice
 sinc^2 function, so it probably can simulate at least Fraunhofer
 diffraction (google it! :), but still: the shape may look good,
 but it might have wrong amplitudes or frequency.
@@ -58,3 +58,16 @@ example: with 400 nm light (blue~ish) it would be wise to use about
 40 nm distances, if you want to compute 10^5 waves at most (per
 point!), that gives you a maximum shutter length of
 4*10^-8 m *10^5 = 4 mm.
+
+
+5. The code.
+
+If you don't have Gnuplot you will want to comment / delete last
+few lines (from 'myplot = Gnuplot(...)') and the import statement
+in the beginning of the file.
+
+The program creates a folder 'output', if it doesn't already exist,
+in the dir it's run in to store it's output. It writes to a single
+file named [myname]XXX where XXX is the smallest available integer,
+starting from 000. Each time it is run it will create a file with
+a higher index, so you *shouldn't* loose any data.
